@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+#Przekierowanie na WWW
+Options +FollowSymLinks
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^wyburzeniaiwykopy.pl [nc]
+RewriteRule ^(.*)$ https://www.wyburzeniaiwykopy.pl/$1 [r=301,nc]
